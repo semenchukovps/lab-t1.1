@@ -1,27 +1,21 @@
 
-all: main libhello.a libgoodbye.a
+all: main libs
 	gcc -o bin main.o -L. -lhello -lgoodbye 
+
+
 
 
 main: main.c
 	gcc -c main.c
 
-libhello.a: libhello.o
+libs: libsobj
 	ar cr libhello.a libhello.o
-	
-	
-libgoodbye.a: libgoodbye.o
 	ar cr libgoodbye.a libgoodbye.o
 
-
-
-libhello.o: 
+libsobj:
 	gcc -c libhello.c
-
-libgoodbye.o: 
 	gcc -c libgoodbye.c
-
-libs: libhello.a libgoodbye.a
+	
 	
 		
 clean:
