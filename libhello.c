@@ -1,5 +1,5 @@
 #include "libhello.h"
 
-char * hello(){
+const char * hello(){
 		return "Hello World\n";
 }
